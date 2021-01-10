@@ -1,0 +1,45 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 ---\
+- name: config web VM with docker\
+  hosts: webservers\
+  become: true\
+  tasks:\
+  - name: docker.io\
+    apt:\
+      force_apt_get: yes\
+      update_cache: yes\
+      name: docker.io\
+      state: present\
+\
+\
+  - name: python3-pip\
+    apt:\
+      force_apt_get: yes\
+      update_cache: yes\
+      name: python3-pip\
+      state: present\
+\
+  - name: install docker python module\
+    pip:\
+      name: docker\
+      state: present\
+\
+  - name: Download and lunch a docker web container\
+    docker_container:\
+      name: dvwa\
+      image: cyberxsecurity/dvwa\
+      state: started\
+      restart_policy: always\
+      published_ports: 80:80\
+\
+  - name: Enable docker service using systemd\
+    systemd:\
+      name: docker\
+      enabled: yes\
+}
