@@ -63,7 +63,8 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - Services running can be limited,system installation and update can be streamlined and processes become more applicable.
 
 The playbook implements the following tasks:
--[Installs docker.io,pip3,and the other docker module](https://github.com/Ucheonyekpe1984/Scripts/blob/main/Images/Screen%20Shot%202021-01-13%20at%2010.51.14%20AM.png)
+-Installs docker.io,pip3,and the other docker module
+https://github.com/Ucheonyekpe1984/Scripts/blob/main/Images/Screen%20Shot%202021-01-13%20at%2010.51.14%20AM.png
 - ...
 - ...
 
