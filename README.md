@@ -21,7 +21,7 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 Load balancers help to ensure availability through the distribution of incoming data to web servers. Jump boxes allow for a more administration of multiple systems and provide an additional layer between the outside and internal assets.
